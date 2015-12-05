@@ -1,0 +1,95 @@
+/*  MAIN CONTAINER
+    Set the width to whatever you want the width of your site to be. */
+.containerr {
+    margin: 0 auto !important;
+}
+
+
+/*  SELF CLEARING FLOATS - CLEARFIX METHOD */
+.containerr:after,
+.roww:after,
+.coll:after,
+.clr:after,
+.group:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+/*  DEFAULT ROWw STYLES
+    Set bottom padding according to preference */
+.roww { padding-bottom: 0 !important; }
+
+
+/* DEFAULT COLlUMN STYLES */
+.coll {
+    display: block;
+    float: left;
+    width: 100% !important;
+}
+
+@media ( min-width : 768px ) {
+
+    .gutters .coll {
+        margin-left: 2% !important;
+    }
+
+    .gutters .coll:first-child {
+        margin-left: 0 !important;
+    }
+}
+
+
+/*  COLlUMN WIDTH ON DISPLAYS +768px
+    You might need to play with media queries here to suite your design. */
+@media ( min-width : 768px ) {
+    .spann_1 { width: 4.16666666667% !important; }
+    .spann_2 { width: 8.33333333333% !important; }
+    .spann_3 { width:12.5% !important; }
+    .spann_4 { width: 16.6666666667% !important; }
+    .spann_5 { width: 20.8333333333% !important; }
+    .spann_6 { width: 25% !important; }
+    .spann_7 { width: 29.1666666667% !important; }
+    .spann_8 { width: 33.3333333333% !important; }
+    .spann_9 { width: 37.5% !important; }
+    .spann_10 { width: 41.6666666667% !important; }
+    .spann_11 { width: 45.8333333333% !important; }
+    .spann_12 { width: 50% !important; }
+    .spann_13 { width: 54.1666666667% !important; }
+    .spann_14 { width: 58.3333333333% !important; }
+    .spann_15 { width: 62.5% !important; }
+    .spann_16 { width: 66.6666666667% !important; }
+    .spann_17 { width: 70.8333333333% !important; }
+    .spann_18 { width: 75% !important; }
+    .spann_19 { width: 79.1666666667% !important; }
+    .spann_20 { width: 83.3333333333% !important; }
+    .spann_21 { width: 87.5% !important; }
+    .spann_22 { width: 91.6666666667% !important; }
+    .spann_23 { width: 95.8333333333% !important; }
+    .spann_24 { width: 100% !important; }
+
+    .gutters .spann_1 { width: 2.25% !important; }
+    .gutters .spann_2 { width: 6.5% !important; }
+    .gutters .spann_3 { width: 10.75% !important; }
+    .gutters .spann_4 { width: 15.0% !important; }
+    .gutters .spann_5 { width: 19.25% !important; }
+    .gutters .spann_6 { width: 23.5% !important; }
+    .gutters .spann_7 { width: 27.75% !important; }
+    .gutters .spann_8 { width: 32.0% !important; }
+    .gutters .spann_9 { width: 36.25% !important; }
+    .gutters .spann_10 { width: 40.5% !important; }
+    .gutters .spann_11 { width: 44.75% !important; }
+    .gutters .spann_12 { width: 49.0% !important; }
+    .gutters .spann_13 { width: 53.25% !important; }
+    .gutters .spann_14 { width: 57.5% !important; }
+    .gutters .spann_15 { width: 61.75% !important; }
+    .gutters .spann_16 { width: 66.0% !important; }
+    .gutters .spann_17 { width: 70.25% !important; }
+    .gutters .spann_18 { width: 74.5% !important; }
+    .gutters .spann_19 { width: 78.75% !important; }
+    .gutters .spann_20 { width: 83.0% !important; }
+    .gutters .spann_21 { width: 87.25% !important; }
+    .gutters .spann_22 { width: 91.5% !important; }
+    .gutters .spann_23 { width: 95.75% !important; }
+    .gutters .spann_24 { width: 100% !important; }
+}

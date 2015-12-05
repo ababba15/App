@@ -1,0 +1,873 @@
+<template name="addEvent">
+	<h1 class="text-center">Добавление нового мероприятия</h1>
+	<hr>
+	<div class="roww">
+		<div class="coll spann_2 hid">Hidden</div>
+		<div class="coll spann_6">
+			<div class='main-data'>
+				<h3 class="text-center">Основные данные</h3>
+				<hr> {{> textfield label='Название' id='event-aname'}} {{> textfield label='Город' id='event-acity'}} {{> textfield label='Организатор' id='event-aprovider'}}
+			</div>
+
+			<div class="a">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_a'}}</div>
+			<div class="b">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_b'}}</div>
+			<div class="c">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_c'}}</div>
+			<div class="d">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_d'}}</div>
+			<div class="e">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_e'}}</div>
+			<div class="f">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_f'}}</div>
+			<div class="g">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_g'}}</div>
+			<div class="h">
+				<hr>
+				<p class="text-center"><b>Описание</b> </p>{{> btextfield id='event-info_h'}}</div>
+
+		</div>
+
+		<div class="coll spann_1 hid">Hidden</div>
+
+		<!-- START CHOOSING -->
+
+		<div class="coll spann_6">
+			<h3 class="text-center">Программы</h3>
+			<hr>
+
+			<div class="dropdown form-group">
+				<label for="event-program-dropdown">Выберите программу</label>
+				<select class="form-control coll spann_24 green" id="event-program-dropdown">
+					<option value=""></option>
+					<option value="0">Нет программы</option>
+					<option value="a">Программа A</option>
+					<option value="b">Программа B</option>
+					<option value="c">Программа C</option>
+					<option value="d">Программа D</option>
+					<option value="e">Программа E</option>
+					<option value="f">Программа F</option>
+					<option value="g">Программа G</option>
+					<option value="h">Программа H</option>
+				</select>
+			</div>
+
+			<!-- A entry 1 -->
+			<div class="a">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_a'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_a'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_a"></label>
+							<select class="form-control coll spann_11" id="event-days_a">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_a'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_a'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_a'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_a'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_a'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_a" id="event-vaucher-bool_a">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_a'>
+							{{> textfield label='Min' id='event-vaucher-min_a'}} {{> textfield label='Med' id='event-vaucher-mid_a'}} {{> textfield label='Max' id='event-vaucher-max_a'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- A entry 1 // -->
+
+			<!-- B entry 1 -->
+			<div class="b">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_b'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_b'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_b"></label>
+							<select class="form-control coll spann_11" id="event-days_b">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_b'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_b'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_b'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_b'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_b'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_b" id="event-vaucher-bool_b">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_b'>
+							{{> textfield label='Min' id='event-vaucher-min_b'}} {{> textfield label='Med' id='event-vaucher-mid_b'}} {{> textfield label='Max' id='event-vaucher-max_b'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- B entry 1 // -->
+
+			<!-- C entry 1 -->
+			<div class="c">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_c'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_c'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_c"></label>
+							<select class="form-control coll spann_11" id="event-days_c">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_c'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_c'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_c'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_c'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_c'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_c" id="event-vaucher-bool_c">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_c'>
+							{{> textfield label='Min' id='event-vaucher-min_c'}} {{> textfield label='Med' id='event-vaucher-mid_c'}} {{> textfield label='Max' id='event-vaucher-max_c'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- C entry 1 // -->
+
+			<!-- D entry 1 -->
+			<div class="d">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_d'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_d'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_d"></label>
+							<select class="form-control coll spann_11" id="event-days_d">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_d'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_d'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_d'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_d'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_d'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_d" id="event-vaucher-bool_d">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_d'>
+							{{> textfield label='Min' id='event-vaucher-min_d'}} {{> textfield label='Med' id='event-vaucher-mid_d'}} {{> textfield label='Max' id='event-vaucher-max_d'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- D entry 1 // -->
+
+			<!-- E entry 1 -->
+			<div class="e">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_e'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_e'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_e"></label>
+							<select class="form-control coll spann_11" id="event-days_e">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_e'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_e'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_e'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_e'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_e'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_e" id="event-vaucher-bool_e">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_e'>
+							{{> textfield label='Min' id='event-vaucher-min_e'}} {{> textfield label='Med' id='event-vaucher-mid_e'}} {{> textfield label='Max' id='event-vaucher-max_e'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- E entry 1 // -->
+
+			<!-- F entry 1 -->
+			<div class="f">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_f'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_f'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_f"></label>
+							<select class="form-control coll spann_11" id="event-days_f">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_f'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_f'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_f'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_f'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_f'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_f" id="event-vaucher-bool_f">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_f'>
+							{{> textfield label='Min' id='event-vaucher-min_f'}} {{> textfield label='Med' id='event-vaucher-mid_f'}} {{> textfield label='Max' id='event-vaucher-max_f'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- F entry 1 // -->
+
+			<!-- G entry 1 -->
+			<div class="g">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_g'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_g'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_g"></label>
+							<select class="form-control coll spann_11" id="event-days_g">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_g'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_g'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_g'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_g'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_g'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" name="event-vaucher-bool_g" id="event-vaucher-bool_g">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_g'>
+							{{> textfield label='Min' id='event-vaucher-min_g'}} {{> textfield label='Med' id='event-vaucher-mid_g'}} {{> textfield label='Max' id='event-vaucher-max_g'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- G entry 1 // -->
+
+			<!-- H entry 1 -->
+			<div class="h">
+				<div class="roww">
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время начала' id='event-starttime_h'}}
+						</div>
+					</div>
+					<div class="coll spann_2 hid">Hidden</div>
+					<div class='coll spann_11'>
+						<div class="form-group">
+							{{> timepicker label='Время окончания' id='event-endtime_h'}}
+						</div>
+					</div>
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Продолжительность</b> </p>
+						<div style="margin-top: -20px">
+							<label class="control-label" for="event-days_h"></label>
+							<select class="form-control coll spann_11" id="event-days_h">
+								<option value=""></option>
+								<option value="1d">Один день</option>
+								<option value="2d">Два дня</option>
+								<option value="3d">Три дня</option>
+								<option value="4d">Четыре дня</option>
+								<option value="5d">Пять дней</option>
+								<option value="6d">Шесть дней</option>
+								<option value="7d">Семь дней</option>
+								<option value="8d">Восемь дней</option>
+							</select>
+							<div class="coll spann_2">
+								<h3 class="text-center">+</h3></div>
+							<div class='coll spann_11'>
+								<div class="form-group">
+									{{> timepicker id='event-hours_h'}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<p class="text-center"><b>Стоимость</b> </p>
+					<div class="form-group">
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых' id='event-price-adult_h'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей' id='event-price-child_h'}}
+						</div>
+
+						<div class="coll spann_11">
+							{{> textfield label='Для взрослых (net)' id='event-price-adult-net_h'}}
+						</div>
+						<div class="coll spann_2 hid">Hidden</div>
+						<div class="coll spann_11">
+							{{> textfield label='Для детей (net)' id='event-price-child-net_h'}}
+						</div>
+					</div>
+
+					<hr>
+					<div class='roww'>
+						<p class="text-center"><b>Скидки</b> </p>
+						<div class="coll spann_12" style="margin-top: 22px;">
+							<input type="checkbox" data-on-text='Есть' data-off-text='Нет' name="event-vaucher-bool_h" id="event-vaucher-bool_h">
+						</div>
+						<div class="coll spann_12" id='event-vouchers_h'>
+							{{> textfield label='Min' id='event-vaucher-min_h'}} {{> textfield label='Med' id='event-vaucher-mid_h'}} {{> textfield label='Max' id='event-vaucher-max_h'}}
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- H entry 1 // -->
+
+		</div>
+		<div class="coll spann_1 hid">Hidden</div>
+
+		<div class="coll spann_6">
+			<h3 class="text-center">{reserved}</h3>
+			<hr>
+
+		</div>
+
+		<div class="coll spann_2 hid">Hidden</div>
+	</div>
+
+	<!-- A entry 2 -->
+	<div class="container">
+		<div class="roww a">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- A entry 2 // -->
+
+	<!-- B entry 2 -->
+	<div class="container">
+		<div class="roww b">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- B entry 2 // -->
+
+	<!-- C entry 2 -->
+	<div class="container">
+		<div class="roww c">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- C entry 2 // -->
+
+	<!-- D entry 2 -->
+	<div class="container">
+		<div class="roww d">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- D entry 2 // -->
+
+	<!-- E entry 2 -->
+	<div class="container">
+		<div class="roww e">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- E entry 2 // -->
+
+	<!-- F entry 2 -->
+	<div class="container">
+		<div class="roww f">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- F entry 2 // -->
+
+	<!-- G entry 2 -->
+	<div class="container">
+		<div class="roww g">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- G entry 2 // -->
+
+	<!-- H entry 2 -->
+	<div class="container">
+		<div class="roww h">
+			<p class="text-center"><b>Время в пути из...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+	<!-- H entry 2 // -->
+
+	<script>
+	Dropdown = $('#event-program-dropdown');
+	$('.a').hide();
+	$('.b').hide();
+	$('.c').hide();
+	$('.d').hide();
+	$('.e').hide();
+	$('.f').hide();
+	$('.g').hide();
+	$('.h').hide();
+	select = this.value;
+	Dropdown.change(function() {
+		if ($(this).val() === 'a') {
+			$('.a').show();
+		} else {
+			$('.a').hide()
+		};
+		if ($(this).val() === 'b') {
+			$('.b').show();
+			console.log('YES')
+		} else {
+			$('.b').hide()
+		};
+		if ($(this).val() === 'c') {
+			$('.c').show();
+		} else {
+			$('.c').hide()
+		};
+		if ($(this).val() === 'd') {
+			$('.d').show();
+		} else {
+			$('.d').hide()
+		};
+		if ($(this).val() === 'e') {
+			$('.e').show();
+		} else {
+			$('.e').hide()
+		};
+		if ($(this).val() === 'f') {
+			$('.f').show();
+		} else {
+			$('.f').hide()
+		};
+		if ($(this).val() === 'g') {
+			$('.g').show();
+		} else {
+			$('.g').hide()
+		};
+		if ($(this).val() === 'h') {
+			$('.h').show();
+		} else {
+			$('.h').hide()
+		};
+	});
+	</script>
+
+	<script>
+	$("#event-vouchers_a").hide();
+	$("[name='event-vaucher-bool_a']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_a"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_a").show();
+		} else {
+			$("#event-vouchers_a").hide();
+		}
+	});
+	$("#event-vouchers_b").hide();
+	$("[name='event-vaucher-bool_b']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_b"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_b").show();
+		} else {
+			$("#event-vouchers_b").hide();
+		}
+	});
+	$("#event-vouchers_c").hide();
+	$("[name='event-vaucher-bool_c']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_c"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_c").show();
+		} else {
+			$("#event-vouchers_c").hide();
+		}
+	});
+	$("#event-vouchers_d").hide();
+	$("[name='event-vaucher-bool_d']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_d"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_d").show();
+		} else {
+			$("#event-vouchers_d").hide();
+		}
+	});
+	$("#event-vouchers_e").hide();
+	$("[name='event-vaucher-bool_e']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_e"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_e").show();
+		} else {
+			$("#event-vouchers_e").hide();
+		}
+	});
+	$("#event-vouchers_f").hide();
+	$("[name='event-vaucher-bool_f']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_f"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_f").show();
+		} else {
+			$("#event-vouchers_f").hide();
+		}
+	});
+	$("#event-vouchers_g").hide();
+	$("[name='event-vaucher-bool_g']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_g"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_g").show();
+		} else {
+			$("#event-vouchers_g").hide();
+		}
+	});
+	$("#event-vouchers_h").hide();
+	$("[name='event-vaucher-bool_h']").bootstrapSwitch();
+	$('input[name="event-vaucher-bool_h"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if (state === true) {
+			$("#event-vouchers_h").show();
+		} else {
+			$("#event-vouchers_h").hide();
+		}
+	});
+	</script>
+	<div class="roww text-center">
+		{{> confirm add='новое мероприятие'}}
+	</div>
+
+</template>

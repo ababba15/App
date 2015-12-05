@@ -1,0 +1,45 @@
+<template name="nav">
+    <nav class="navbar navbar-default navbar-static">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{pathFor route='home'}}">A&E partner</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-large">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Новый заказ<b class="caret"></b></a>
+                    <ul class="dropdown-menu dropdown-menu-large row">
+                        <li class="col-sm-12">
+                            <ul>
+                                <li class="dropdown-header">Создать новый заказ</li>
+                                <li><a href="{{pathFor route='orderTaxi'}}">Такси</a></li>
+                                <li><a href="{{pathFor route='orderEvent'}}">Мероприятие</a></li>
+                                <li><a href="{{pathFor route='orderTransfer'}}">Трансфер</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-large">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Новая услуга<b class="caret"></b></a>
+                    <ul class="dropdown-menu dropdown-menu-large row">
+                        <li class="col-sm-12">
+                            <ul>
+                                <li class="dropdown-header">Добавить новую услугу</li>
+                                <li><a href="{{pathFor route='addEvent'}}">Новое мероприятие</a></li>
+                                <li><a href="{{pathFor route='addTransfer'}}">Новый трансфер</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </nav>
+</template>

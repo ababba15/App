@@ -1,0 +1,64 @@
+<template name="addTransfer">
+
+	<h1 class="text-center">Добавление нового трансфера</h1>
+	<hr>
+	<div class="roww">
+		<div class="coll spann_2 hid">Hidden</div>
+		<div class="coll spann_6">
+			<p class="text-center"><b>Направление и время</b> </p>
+			<div class="form-group">
+				<div class="coll spann_11">
+				{{> placesDropdown label='Начальная точка' id='transfer-from'}}
+				</div>
+				<div class="coll spann_2 hid">Hidden</div>
+				<div class="coll spann_11">
+				{{> placesDropdown label='Конечная точка' id='transfer-to'}}
+				</div>
+				<div class="coll spann_11">
+				{{> timepicker label='Время отправления' id='transfer-time-from'}}
+				</div>
+				<div class="coll spann_2 hid">Hidden</div>
+				<div class="coll spann_11">
+				{{> timepicker label='Время прибытия' id='transfer-time-to'}}
+				</div>
+
+				<div class="coll spann_11">
+					<label for="transfer-two-way">В оба конца</label>
+					<input type="checkbox" data-on-text='ДА' data-off-text='НЕТ' id="transfer-two-way">
+				</div>
+				<div class="coll spann_2 hid">Hidden</div>
+				<div class="coll spann_11">
+					<label for="transfer-two-way">Доставка на лодке</label>
+					<input type="checkbox" data-on-text='ДА' data-off-text='НЕТ' id="transfer-onboat">
+				</div>
+
+			</div>
+
+		</div>
+		<div class="coll spann_1 hid">Hidden</div>
+		<div class="coll spann_6">
+
+		</div>
+		<div class="coll spann_1 hid">Hidden</div>
+
+		<div class="coll spann_6">
+			<h3 class="text-center">{reserved}</h3>
+			<hr>
+		</div>
+
+		<div class="coll spann_2 hid">Hidden</div>
+	</div>
+
+	<!-- A entry 2 -->
+	<div class="container">
+		<div class="roww">
+			<p class="text-center"><b>Забирать клиента из отеля за...</b> </p>
+			{{> place}}
+		</div>
+	</div>
+
+	<script>
+		$("[id='transfer-two-way']").bootstrapSwitch();
+		$("[id='transfer-onboat']").bootstrapSwitch();
+	</script>
+</template>
