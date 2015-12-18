@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{pathFor route='home'}}">A&E partner</a>
+            <a class="navbar-brand" href="{{pathFor route='home'}}">A&E Partner</a>
         </div>
         <div class="collapse navbar-collapse js-navbar-collapse">
             <ul class="nav navbar-nav">
@@ -17,9 +17,12 @@
                         <li class="col-sm-12">
                             <ul>
                                 <li class="dropdown-header">Создать новый заказ</li>
-                                <li><a href="{{pathFor route='orderTaxi'}}">Такси</a></li>
-                                <li><a href="{{pathFor route='orderEvent'}}">Мероприятие</a></li>
                                 <li><a href="{{pathFor route='orderTransfer'}}">Трансфер</a></li>
+                                <li><a href="{{pathFor route='orderTour'}}">Экскурсия / шоу</a></li>
+                                <li><a href="{{pathFor route='orderTaxi'}}">Маршрут такси</a></li>
+                                <li><a href="{{pathFor route='orderVisa'}}">Визовая услуга</a></li>
+                                <li><a href="{{pathFor route='orderShopping'}}">Шоппинг</a></li>
+                                <li><a href="{{pathFor route='orderSpa'}}">Spa</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -32,8 +35,15 @@
                         <li class="col-sm-12">
                             <ul>
                                 <li class="dropdown-header">Добавить новую услугу</li>
-                                <li><a href="{{pathFor route='addEvent'}}">Новое мероприятие</a></li>
-                                <li><a href="{{pathFor route='addTransfer'}}">Новый трансфер</a></li>
+                                <li><a href="{{pathFor route='addTransfer'}}">Трансфер</a></li>
+                                <li><a href="{{pathFor route='addTour'}}">Экскурсия / шоу</a></li>
+                                <li><a href="{{pathFor route='addTaxiRoute'}}">Маршрут такси</a></li>
+                                <li><a href="{{pathFor route='addVisa'}}">Визовая услуга</a></li>
+                                <li><a href="{{pathFor route='addShopping'}}">Шоппинг</a></li>
+                                <li><a href="{{pathFor route='addSpa'}}">Spa</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{pathFor route='addProvider'}}">Организатор</a></li>
+                                <li><a href="{{pathFor route='addPlace'}}">Локация</a></li>
                             </ul>
                         </li>
                     </ul>

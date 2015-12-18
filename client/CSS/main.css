@@ -1,42 +1,21 @@
-@font-face {
-    font-family: "Roboto";
-    src: local(Roboto Thin), url("/client/roboto/Roboto-Thin.woff2") format("woff2"), url("/client/roboto/Roboto-Thin.woff") format("woff"), url("/client/roboto/Roboto-Thin.ttf") format("truetype");
-    font-weight: 200;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: local(Roboto Light), url("/client/roboto/Roboto-Light.woff2") format("woff2"), url("/client/roboto/Roboto-Light.woff") format("woff"), url("/client/roboto/Roboto-Light.ttf") format("truetype");
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: local(Roboto Regular), url("/client/roboto/Roboto-Regular.woff2") format("woff2"), url("/client/roboto/Roboto-Regular.woff") format("woff"), url("/client/roboto/Roboto-Regular.ttf") format("truetype");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url("/client/roboto/Roboto-Medium.woff2") format("woff2"), url("/client/roboto/Roboto-Medium.woff") format("woff"), url("/client/roboto/Roboto-Medium.ttf") format("truetype");
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url("/client/roboto/Roboto-Bold.woff2") format("woff2"), url("/client/roboto/Roboto-Bold.woff") format("woff"), url("/client/roboto/Roboto-Bold.ttf") format("truetype");
-    font-weight: 700;
-}
-
-html,
-body,
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic);
 * {
-    font: normal 'Roboto' !important;
+    font-family: 'Roboto' !important;
 }
 
 html {
     height: 100%;
     box-sizing: border-box;
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer */
+    -khtml-user-select: none;
+    /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none;
+    /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none;
+    /* Disable Android and iOS callouts*/
 }
 
 body {
@@ -44,11 +23,12 @@ body {
     margin: 0;
     padding-bottom: 20rem;
     min-height: 100% !important;
-    background-color: #E0E0E0;
+    background-color: #efefef;
 }
 
 a {
-    color: #9C9C9C;
+    color: #7f18ff;
+    cursor: default;
 }
 
 .row {
@@ -182,25 +162,6 @@ textarea {
     margin-bottom: 13px;
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    height: 37px;
-    padding-left: 15px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    color: #4D4D4D;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 0 #ffffff;
-    box-shadow: 0 0 0 #ffffff;
-    -webkit-transition: -webkit-border-color ease-in-out 0.5s, -webkit-box-shadow ease-in-out 0.17s;
-    -o-transition: border-color ease-in-out 0.5s, box-shadow ease-in-out 0.17s;
-    transition: border-color ease-in-out 0.5s, box-shadow ease-in-out 0.17s;
-}
-
 .form-control:focus {
     border: 1px solid #434343;
     outline: 0;
@@ -320,5 +281,72 @@ textarea {
 }
 
 .btn-default:focus {
-    border: #adadad;
+    color: #FFF;
+    background-color: #156829;
+    border-color: #adadad;
+}
+
+.btn-default:active {
+    color: #FFF;
+    background-color: #156829;
+    border-color: #adadad;
+}
+
+
+/* basic typeahead styles */
+
+.twitter-typeahead {
+    display: block !important;
+}
+
+.tt-hint {
+    color: #9eacff
+}
+
+.tt-menu {
+    width: 422px;
+    margin: 4px 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.tt-suggestion:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.display-block {
+    background-color: #ffffff;
+    width: 24%;
+    display: inline-block;
+    margin: 3px;
+    padding: 9px;
 }

@@ -1,58 +1,64 @@
 <template name="timepicker">
-
     <label class="control-label" for="{{id}}">{{label}}</label>
     <div class='input-group date timepick'>
-        <input type='text' id='{{id}}' class="form-control" />
+        <input type='text' placeholder='{{placeholder}}' id='{{id}}' class="form-control" />
         <span class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
         </span>
-
     </div>
-
 </template>
+
+
 <template name="datepicker">
-    <label class="control-label coll spann_8" for="{{id}}">{{label}}</label>
-    <div class='input-group date datepick coll spann_16'>
-        <input type='text' id='{{id}}' class="form-control" />
+    <label class="control-label" for="{{id}}">{{label}}</label>
+    <div class='input-group date datepick'>
+        <input type='text' placeholder='{{placeholder}}' id='{{id}}' class="form-control" />
         <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
         </span>
     </div>
 </template>
+
+
 <template name="datetimepicker">
     <label class="control-label coll spann_8" for="{{id}}">{{label}}</label>
     <div class='input-group date datetimepick coll spann_16'>
-        <input type='text' id='{{id}}' class="form-control" />
+        <input type='text' placeholder='{{placeholder}}' id='{{id}}' class="form-control" />
         <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
         </span>
     </div>
 </template>
+
 
 <template name="textfield">
     <label class="control-label" for="{{id}}">{{label}}</label>
     <div class="form-group">
-        <input class="form-control" type="text" id="{{id}}">
+        <input placeholder='{{placeholder}}' name='input-text' class="form-control" type="text" id="{{id}}">
     </div>
 </template>
+
 
 <template name="btextfield">
     <label class="control-label coll" for="{{id}}">{{label}}</label>
     <textarea class="form-control" type="textarea" id="{{id}}" name="{{name}}" rows="10"></textarea>
 </template>
 
+
 <template name="pricefield">
     <label class="control-label coll spann_8" for="{{id}}">{{label}}</label>
     <div class="coll spann_16">
-        <input class="form-control" type="number" id="{{id}}" />
+        <input class="form-control" placeholder='{{placeholder}}' type="number" id="{{id}}" />
     </div>
 </template>
+
 
 <template name="confirm">
     <button type="submit" class="btn btn-default btn-lg conf">Добавить {{add}}</button>
 </template>
 
-<template name="place">
+
+<!-- <template name="place">
     <div class="coll spann_24 ">
         {{#each place in places}}
         <div class="coll spann_3 ">
@@ -60,7 +66,7 @@
         </div>
         {{/each}}
     </div>
-</template>
+</template> -->
 <!-- <div class="coll spann_12">
     <p class="text-center"><b>Время в дороге</b></p>
     <label class="control-label" for="places-list">Место отправления</label>
@@ -71,6 +77,7 @@
         {{/each}}
     </select>
 </div> -->
+
 
 <template name="placesDropdown">
     <label class="control-label" for="places-list">{{label}}</label>
