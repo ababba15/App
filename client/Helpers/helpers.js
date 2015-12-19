@@ -1,9 +1,7 @@
-Meteor.subscribe( 'Locations' );
-Meteor.subscribe( 'Districts' );
-Meteor.subscribe( 'Places' );
+Meteor.subscribe('Locations');
 
-Template.newLocation.events( {
-	'submit form': function ( event ) {
+Template.newLocation.events({
+	'submit form': function (event) {
 		event.preventDefault();
 		event.stopPropagation();
 		var l = event.target.newLocation.value,
@@ -11,32 +9,32 @@ Template.newLocation.events( {
 			p = event.target.newPlace.value,
 			k = event.target.kind.value;
 
-		if ( l.length == 0 ) {
+		if (l.length == 0) {
 			l = undefined;
 		};
-		if ( d.length == 0 ) {
+		if (d.length == 0) {
 			d = undefined;
 		};
-		if ( p.length == 0 ) {
+		if (p.length == 0) {
 			p = undefined;
 		};
 
-		Locations.insert( {
+		Locations.insert({
 			location: l,
 			district: d,
 			place: p,
 			kind: k
-		} );
+		});
 	}
-} );
+});
 
-Template.Show.helpers( {
+Template.Show.helpers({
 	settings: function () {
 		return {
 			collection: Locations,
 			rowsPerPage: 10,
 			showFilter: true,
-			fields: [ {
+			fields: [{
 				key: 'location',
 				label: 'Локация'
 			}, {
@@ -52,16 +50,16 @@ Template.Show.helpers( {
 				key: 'delete',
 				label: 'Удалить',
 				fn: function () {
-					return new Spacebars.SafeString( '<a class="delete">Удалить</a>' )
+					return new Spacebars.SafeString('<a class="delete">Удалить</a>')
 
 				}
-			} ]
+			}]
 
 		}
 	}
-} );
+});
 
-Meteor.startup( function () {
+Meteor.startup(function () {
 	var shareDialogInfo = {
 		template: Template.LocDialog,
 		title: "Изменить запись",
@@ -86,15 +84,14 @@ Meteor.startup( function () {
 		}
 	}
 
-	rd = ReactiveModal.initDialog( shareDialogInfo );
-	rd.buttons.ok.on( 'click', function ( button ) {
+	rd = ReactiveModal.initDialog(shareDialogInfo);
+	rd.buttons.ok.on('click', function (button) {
 		var X = ReVar.get(),
-			lm = $( rd.modalTarget ).find( '[name=newModalLocation]' ).val(),
-			dm = $( rd.modalTarget ).find( '[name=newModalDistrict]' ).val(),
-			pm = $( rd.modalTarget ).find( '[name=newModalPlace]' ).val(),
-			km = $( rd.modalTarget ).find( '[name=kindModal]:checked' ).val();
-			console.log(km);
-		Locations.update( {
+			lm = $(rd.modalTarget).find('[name=newModalLocation]').val(),
+			dm = $(rd.modalTarget).find('[name=newModalDistrict]').val(),
+			pm = $(rd.modalTarget).find('[name=newModalPlace]').val(),
+			km = $(rd.modalTarget).find('[name=kindModal]:checked').val();
+		Locations.update({
 			_id: X
 		}, {
 			$set: {
@@ -103,34 +100,34 @@ Meteor.startup( function () {
 				place: pm,
 				kind: km
 			}
-		} )
-	} );
+		})
+	});
 
-} );
+});
 
 ReVar = new ReactiveVar();
 
-Template.layout.events( {
+Template.layout.events({
 
-	'click .reactive-table tbody tr': function ( event ) {
+	'click .reactive-table tbody tr': function (event) {
 		event.preventDefault();
-		if ( event.target.className == "delete" ) {
+		if (event.target.className == "delete") {
 			var loc = this;
-			Locations.remove( loc._id )
+			Locations.remove(loc._id)
 		}
 	},
 
-	'dblclick .reactive-table tbody tr': function ( event ) {
+	'dblclick .reactive-table tbody tr': function (event) {
 		event.preventDefault();
-		ReVar.set( this._id );
+		ReVar.set(this._id);
 		rd.show();
 	}
-} );
+});
 
-Template.registerHelper( 'Locations',
+Template.registerHelper('Locations',
 	function () {
 		var X = ReVar.get();
-		return Locations.findOne( {
+		return Locations.findOne({
 			_id: X
-		} )
-	} );
+		})
+	});

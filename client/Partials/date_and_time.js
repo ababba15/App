@@ -1,4 +1,4 @@
-Template.timepicker.onRendered(function() {
+Template.timepicker.onRendered(function () {
     this.$('.timepick').datetimepicker({
         format: 'HH : mm',
         dayViewHeaderFormat: 'HH : mm',
@@ -14,8 +14,7 @@ Template.timepicker.onRendered(function() {
 
 });
 
-
-Template.datepicker.onRendered(function (){
+Template.datepicker.onRendered(function () {
     this.$('.datepick').datetimepicker({
         format: 'DD MMMM YYYY',
         extraFormats: false,
@@ -30,8 +29,7 @@ Template.datepicker.onRendered(function (){
 
 });
 
-
-Template.datetimepicker.onRendered(function() {
+Template.datetimepicker.onRendered(function () {
     this.$('.datetimepick').datetimepicker({
         format: 'DD MMMM YYYY, HH : mm',
         extraFormats: false,
