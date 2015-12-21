@@ -35,7 +35,8 @@ rzymek:moment-locale-ru
 anti:i18n
 pahans:reactive-modal
 accounts-ui
-alanning:roles
 mrt:require
-aslagle:reactive-table
+chriswessels:glyphicons-halflings
+app:roles
+my:reactive-table
 meteor-accounts-admin-app

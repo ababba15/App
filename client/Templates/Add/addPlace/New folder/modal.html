@@ -1,0 +1,51 @@
+<template name="LocDialog">
+	<form>
+		<div class="form-group">
+
+			<label class="control-label" for="newModalLocation">Локация</label>
+			<input class="form-control" type="text" id="newModalLocation" name="newModalLocation" autocomplete="off" value="{{Locations.location}}">
+
+			<label class="control-label" for="newModalDistrict">Район</label>
+			<input class="form-control" type="text" id="newModalDistrict" name="newModalDistrict" autocomplete="off" value="{{Locations.district}}">
+
+			<label class="control-label" for="newModalPlace">Место</label>
+			<input class="form-control" type="text" id="newModalPlace" name="newModalPlace" autocomplete="off" value="{{Locations.place}}">
+
+			<label class="control-label" for="toCentertModal">До аэропорта (км)</label>
+			<input class="form-control" type="number" id="toCentertModal" name="toCentertModal" autocomplete="off" value="{{Locations.to_center}}">
+
+			<div class="radio">
+				<label>
+					<input type="radio" id="hotel" value="Отель" name="kindModal">Отель</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="airport" value="Аэропорт" name="kindModal">Аэропорт</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="pier" value="Пирс" name="kindModal">Пирс</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="shop" value="Магазин" name="kindModal">Магазин</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="hospital" value="Госпиталь" name="kindModal">Госпиталь</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="spa" value="Спа" name="kindModal">Спа</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="busStation" value="Автобусная станция" name="kind">Автобусная станция</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" id="other" value="Другое" name="kindModal">Другое</label>
+			</div>
+		</div>
+	</form>
+</template>
