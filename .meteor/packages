@@ -40,3 +40,7 @@ chriswessels:glyphicons-halflings
 app:roles
 my:reactive-table
 meteor-accounts-admin-app
+app:datetimepicker
+edgee:slingshot
+tomi:upload-server
+tomi:upload-jquery

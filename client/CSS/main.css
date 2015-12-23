@@ -24,7 +24,7 @@ body {
     margin: 0;
     padding-bottom: 20rem;
     min-height: 100% !important;
-    background-color: #efefef;
+    background-color: #eae0ea !important;
 }
 
 a {
@@ -369,4 +369,22 @@ textarea {
 
 .clickable {
     cursor: pointer;
+}
+
+body.noscroll {
+    overflow: hidden;
+}
+.scrollable {
+    max-height: 200px;
+    border: 1px solid #ccc;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }

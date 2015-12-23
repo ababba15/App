@@ -1,0 +1,136 @@
+<template name="newProvider">
+	<form>
+		<div class="form-group">
+
+			<hr>
+			<label class="control-label" for="newProvider">Название</label>
+			<input class="form-control" type="text" id="newProvider" name="newProvider" autocomplete="off">
+
+			<label class="control-label" for="providers_off">Официальное название</label>
+			<input class="form-control" type="text" id="providers_off" name="providers_off" autocomplete="off">
+
+			<hr>
+
+			<h4 class='text-center'><b>Территория работы</b></h4>
+
+			<label for="locationProv">Локация</label>
+			<select class="selectpicker scrollable form-control" id="locationProv" name="locationProv" multiple>
+				{{#each locations}}
+					<option value="{{this}}"> {{this}} </option>
+				{{/each}}
+			</select>
+
+			<label for="districtProv">Район</label>
+			<select class="selectpicker scrollable form-control" id="districtProv" name="districtProv" multiple>
+				{{#each districts}}
+					<option value="{{this}}"> {{this}} </option>
+				{{/each}}
+			</select>
+
+			<label for="placeProv">Место</label>
+			<select class="selectpicker scrollable form-control" id="placeProv" name="placeProv" multiple>
+				{{#each places}}
+					<option value="{{this.place}}"> {{this.place}} </option>
+				{{/each}}
+			</select>
+
+			<hr>
+			<h4 class='text-center'><b>Привязка к сервисам</b></h4>
+
+			<label for="serviceProv">Сервисы</label>
+			<select class="form-control" id="serviceProv" name="services" size="6" multiple>
+				{{#each services}}
+					<option value="{{this}}">{{this}}</option>
+				{{/each}}
+			</select>
+
+			<hr>
+			<h4 class='text-center'><b>Доступное время для букинга</b></h4> {{> timepicker id='bookingTime_From' label='с..'}} {{> timepicker id='bookingTime_To' label='до..'}}
+
+			<hr>
+
+			<h4 class='text-center'><b>Контакты</b></h4>
+			<br>
+			<br>
+			<h5><b>Контакты организатора</b></h5>
+			<label class="control-label" for="providers_line">Line ID</label>
+			<input class="form-control" type="text" id="providers_line" name="providers_line" autocomplete="off">
+			<label class="control-label" for="providers_phone">Номер телефона</label>
+			<input class="form-control" type="phone" id="providers_phone" name="providers_phone" autocomplete="off">
+			<label class="control-label" for="providers_email">Адрес электронной почты</label>
+			<input class="form-control" type="email" id="providers_email" name="providers_email" autocomplete="off">
+			<label class="control-label" for="providers_additional">Дополнительно</label>
+			<textarea class="form-control scrollable" type="" id="providers_additional" name="providers_additional" autocomplete="off"></textarea>
+			<br>
+			<br>
+			<h5><b>Контакты для инвоиса</b></h5>
+			<label class="control-label" for="invoice_providers_line">Line ID</label>
+			<input class="form-control" type="text" id="invoice_providers_line" name="invoice_providers_line" autocomplete="off">
+			<label class="control-label" for="invoice_providers_phone">Номер телефона</label>
+			<input class="form-control" type="phone" id="invoice_providers_phone" name="invoice_providers_phone" autocomplete="off">
+			<label class="control-label" for="invoice_providers_email">Адрес электронной почты</label>
+			<input class="form-control" type="email" id="invoice_providers_email" name="invoice_providers_email" autocomplete="off">
+			<label class="control-label" for="invoice_providers_req">Реквизиты для оплаты</label>
+			<textarea class="form-control scrollable" id="invoice_providers_req" name="invoice_providers_req" autocomplete="off"></textarea>
+			<label class="control-label" for="invoice_providers_person">Контактное лицо (данные)</label>
+			<textarea class="form-control scrollable" id="invoice_providers_person" name="invoice_providers_person" autocomplete="off"></textarea>
+			<label class="control-label" for="invoice_providers_additional">Дополнительно</label>
+			<textarea class="form-control scrollable" id="invoice_providers_additional" name="invoice_providers_additional" autocomplete="off"></textarea>
+
+			<hr>
+
+			<h4 class='text-center'><b>Суммы доплат</b></h4>
+			<br>
+
+
+			<h5><b>Ночное время</b></h5>
+			<label class="control-label" for="night_sum">Сумма доплаты</label>
+			<input class="form-control" type="number" id="night_sum" name="night_sum" autocomplete="off"> {{> timepicker id='night_from' label='Ночь с..'}} {{> timepicker id='night_to' label='до..'}}
+			<br>
+
+
+			<h5><b>Детское кресло</b></h5>
+			<label class="control-label" for="childseat_sum">Сумма доплаты</label>
+			<input class="form-control" type="number" id="childseat_sum" name="childseat_sum" autocomplete="off">
+			<br>
+
+
+			<h5><b>Животные</b></h5>
+			<label class="control-label" for="animal_sum">Сумма доплаты</label>
+			<input class="form-control" type="number" id="animal_sum" name="animal_sum" autocomplete="off">
+
+
+			<h5><b>Загрузить файлы</b></h5>
+			<input type="file" name="myFileInput" class="myFileInput">
+			{{> progressBar}}
+
+		</div>
+		<input type="submit" value="Добавить">
+
+	</form>
+	<script>
+	$('.selectpicker').selectpicker(
+	{
+		selectedTextFormat: 'count > 3'
+	});
+
+	$('.scrollable').on(
+	{
+		'mouseenter': function()
+		{
+			$('body').addClass('noscroll');
+		},
+		'mouseleave': function()
+		{
+			$('body').removeClass('noscroll');
+		}
+	});
+	</script>
+</template>
+<template name="progressBar">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+      <span class="sr-only">{{progress}}% Complete</span>
+    </div>
+  </div>
+</template>
